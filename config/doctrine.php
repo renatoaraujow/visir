@@ -25,7 +25,9 @@ return [
             'dev'           => env('APP_DEBUG'),
             'meta'          => env('DOCTRINE_METADATA', 'annotations'),
             'connection'    => env('DB_CONNECTION', 'mysql'),
-            'namespaces'    => [],
+            'namespaces'    => [
+                'App' => 'App\Entities'
+            ],
             'paths'         => [
                 base_path('app/Entities')
             ],
@@ -33,7 +35,7 @@ return [
             'proxies'       => [
                 'namespace'     => false,
                 'path'          => storage_path('proxies'),
-                'auto_generate' => env('DOCTRINE_PROXY_AUTOGENERATE', false)
+                'auto_generate' => env('DOCTRINE_PROXY_AUTOGENERATE', true)
             ],
             /*
             |--------------------------------------------------------------------------
